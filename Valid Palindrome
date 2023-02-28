@@ -1,0 +1,13 @@
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+var isPalindrome = function(s) {
+    if (s.trim().length == 0) return true;
+  let arr = s
+    .toLowerCase()
+    .split("")
+    .filter((i) => i.match(/[a-z0-9]/));
+  let newArr = [...arr];
+  return String(arr) === String(newArr.reverse()) 
+};
