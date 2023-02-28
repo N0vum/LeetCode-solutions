@@ -1,0 +1,18 @@
+/**
+ * @param {string[]} strs
+ * @return {string}
+ */
+var longestCommonPrefix = function(strs) {
+    let arr=[]
+ if(!strs.every(i=>i[0]===strs[0][0])){
+   return ''
+ }  else{
+    const sortedStr=strs.sort((a,b)=>a.length-b.length);
+   for(let i=0; i<sortedStr[0].length; i++){
+ sortedStr.every(j=> j[i]===sortedStr[0][i]) ? arr.push(sortedStr[0][i]) : arr.push("/") 
+   }
+
+ }
+  let result=arr.join('');
+  return result.includes('/') ? result.slice(0, result.indexOf('/')) : result
+};
