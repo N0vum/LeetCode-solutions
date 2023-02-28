@@ -1,0 +1,18 @@
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+var isValid = function(s) {
+  const arr = [];
+  const pairs = { ')': '(', '}': '{', ']': '['};
+for (const br of s) {
+      
+    if (!pairs[br]){
+       arr.push(br); 
+    } 
+    else if (arr.pop() !== pairs[br]){
+        return false;
+    } 
+  }
+  return arr.length === 0;
+};
