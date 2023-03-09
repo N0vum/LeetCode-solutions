@@ -1,0 +1,33 @@
+var isHappy = function(n) {
+let map = {};
+let sum = 0;
+if (n < 1) return false;
+while (n !== 1 && !map[n]) {
+map[n] = true;
+sum = 0;
+while (n > 0) {
+sum += Math.pow(n % 10, 2);
+n = Math.floor(n / 10);
+}
+n = sum;
+}
+return n === 1;
+};
+
+This is not OK (Time Limit Exceeded):
+var isHappy = function(n) {
+let set = new Set();
+function sumSquares(n) {
+let sum = 0;
+while (n > 0) {
+sum += Math.pow(n % 10, 2);
+n = Math.floor(n / 10);
+}
+return sum;
+}
+while (n != 1 && !set.has(n)) {
+set.add(n);
+n = sumSquares(n);
+}
+return n == 1;
+}
