@@ -7,5 +7,5 @@ function maxProfit(prices) {
     maxProfit = Math.max(maxProfit, i - minPrice);
   })
 
-  return maxProft;
+  return maxProfit;
 }
