@@ -1,0 +1,11 @@
+function maxProfit(prices) {
+  let minPrice = prices[0];
+  let maxProfit = 0;
+
+   prices.forEach(i=>{
+    minPrice = Math.min(minPrice, i);
+    maxProfit = Math.max(maxProfit, i - minPrice);
+  })
+
+  return maxProft;
+}
