@@ -7,7 +7,7 @@ function commonChars(words) {
       let word = rest[i];
       let bingo = word.search(char);
       bingo !== -1
-        ? (word = word.replace(char, "") && (rest[i] = word))
+        ? (rest[i] = word.replace(char, ""))
         : (flag = false);
     }
   if (flag) dup.push(char);
