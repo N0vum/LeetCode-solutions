@@ -1,0 +1,18 @@
+function commonChars(words) {
+  const [first, ...rest] = words.sort((a, b) => a.length - b.length);
+  let dup = [];
+  [...first].map((char) => {
+    let flag = true;
+    for (let i = 0; i < rest.length; i++) {
+      let word = rest[i];
+      let bingo = word.search(char);
+      bingo !== -1
+        ? (word = word.replace(char, "") && (rest[i] = word))
+        : (flag = false);
+    }
+  if (flag) dup.push(char);
+  });
+  return dup;
+}
+
+console.log(commonChars(["roller", "bella", "label"]));
