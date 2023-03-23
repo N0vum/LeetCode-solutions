@@ -1,0 +1,17 @@
+const addStrings = function (num1, num2) {
+  if (num2.length > num1.length) {
+    [num1, num2] = [num2, num1];
+  }
+  let result = [];
+  let carry = 0;
+  for (let [i, j] = [num1.length - 1, num2.length - 1]; i >= 0; i--, j--) {
+    let iDigit = +num1.charAt(i);
+    let jDigit = j == -1 ? 0 : +num2.charAt(j);
+    let sum = iDigit + jDigit + carry;
+    sum > 9 ? (carry = 1) && (sum %= 10) : (carry = 0);
+    result.unshift(sum);
+  }
+  if (carry > 0) result.unshift(carry);
+  return result.join("");
+};
+console.log(addStrings("9", "1")); //10
