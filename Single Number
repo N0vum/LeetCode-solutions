@@ -1,8 +1,4 @@
-/**
- * @param {number[]} nums
- * @return {number}
- */
-var singleNumber = function(nums) {
+const singleNumber = function(nums) {
      for (let i = 0; i < nums.length; i++) {
     if (i === nums.lastIndexOf(nums[i])) {
       return nums[i];
