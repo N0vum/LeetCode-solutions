@@ -1,8 +1,4 @@
-/**
- * @param {string} s
- * @return {boolean}
- */
-var isPalindrome = function(s) {
+const isPalindrome = function(s) {
     if (s.trim().length == 0) return true;
   let arr = s
     .toLowerCase()
