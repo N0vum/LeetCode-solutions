@@ -1,8 +1,4 @@
-/**
- * @param {string} s
- * @return {boolean}
- */
-var isValid = function(s) {
+const isValid = function(s) {
   const arr = [];
   const pairs = { ')': '(', '}': '{', ']': '['};
 for (const br of s) {
