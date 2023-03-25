@@ -3,7 +3,7 @@ const containsDuplicate = function (nums) {
     acc[el] ? acc[el]++ : (acc[el] = 1);
     return acc;
   }, {});
- return Object.values(duplSum).some((sum) => (sum > 1 ? true : false));
+ return Object.values(duplSum).some((sum) => sum > 1 );
 };
 
 console.log(containsDuplicate([2, 14, 18, 22, 22])); // true
