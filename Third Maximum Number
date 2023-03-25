@@ -1,0 +1,12 @@
+const thirdMax = function (nums) {
+  let nonDubl = [...new Set(nums)];
+  let max = Math.max(...nums);
+  return nums.length >= 3
+    ? nonDubl.length >= 3
+      ? nonDubl.sort((a, b) => b - a)[2]
+      : max
+    : max;
+};
+
+console.log(thirdMax([1, 2, 2, 2, 2, 2])); //2
+console.log(thirdMax([3, 2, 1])); //1
