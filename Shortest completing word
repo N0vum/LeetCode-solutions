@@ -1,0 +1,18 @@
+const shortestCompletingWord = function (licensePlate, words) {
+  const lettersStr = [...licensePlate]
+    .filter((l) => l.match(/[a-z]/i))
+    .map((l) => l.toLowerCase())
+    .sort()
+    .join("");
+  const sortedWordsObj = words
+    .sort((a, b) => a.length - b.length)
+    .reduce((acc, word) => {
+      return { ...acc, [word]: [...word].sort().join("") };
+    }, {});
+  for (let word in sortedWordsObj) {
+    if (sortedWordsObj[word].includes(lettersStr)) return word;
+  }
+};
+console.log(
+  shortestCompletingWord("1s3 PSt", ["step", "steps", "stripe", "stepple"])
+); //"steps"
