@@ -1,0 +1,41 @@
+const islandPerimeter = function (grid) {
+  let result = [];
+  grid.forEach((g, gIndex) => {
+    g.forEach((i, index) => {
+      if (i == 1) {
+        if (g[index - 1] == 0 || index == 0) {
+          result.push(1);
+        }
+        if (g[index + 1] == 0 || index == g.length - 1) {
+          result.push(1);
+        }
+        if (gIndex == 0) {
+          result.push(1);
+        }
+        if (gIndex == grid.length - 1) {
+          result.push(1);
+        }
+        if (gIndex > 0 && grid[gIndex - 1][index] == 0) {
+          result.push(1);
+        }
+        if (
+          i == 1 &&
+          gIndex < grid.length - 1 &&
+          grid[gIndex + 1][index] == 0
+        ) {
+          result.push(1);
+        }
+      }
+    });
+  });
+  return result.length;
+};
+
+console.log(
+  islandPerimeter([
+    [0, 1, 0, 0],
+    [1, 1, 1, 0],
+    [0, 1, 0, 0],
+    [1, 1, 0, 0],
+  ])
+); //16
