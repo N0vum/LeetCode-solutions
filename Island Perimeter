@@ -2,7 +2,8 @@ const islandPerimeter = function (grid) {
   let result = [];
   grid.forEach((g, gIndex) => {
     g.forEach((i, index) => {
-      if (i == 1) {
+      if (i == 0) return
+      else {
         if (g[index - 1] == 0 || index == 0) {
           result.push(1);
         }
