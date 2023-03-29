@@ -1,0 +1,10 @@
+const numIdenticalPairs = function (nums) {
+  return nums.reduce((acc, el, index) => {
+    numsRest = nums.slice(index + 1);
+    numsRest.forEach((i) => {
+      if (i === el) acc++;
+    });
+    return acc;
+  }, 0);
+};
+console.log(numIdenticalPairs([1, 1, 2, 3, 5, 3, 3])); //4
